@@ -31,3 +31,14 @@ while num_processes_done < processes.shape[0]:
     cur_time += 1
     
 print(processes.head())
+
+
+# calculating wait times
+processes["Wait"] = processes["Start"] - processes["Arrival"]
+average_wait_time = processes["Wait"].mean()
+print(average_wait_time)
+
+# calculating Turnaround times
+processes["Turnaround"] = processes["End"] - processes["Arrival"]
+average_turnaround_time = processes["Turnaround"].mean()
+print(average_turnaround_time)
