@@ -11,14 +11,13 @@ def solve_hanoi(num_disks, first_peg, middle_peg, last_peg):
         print("Move the top disk from peg {} to peg {}.".format(first_peg, last_peg))
     else:
         # General Case
-        # Instruction 1: Add code to solve the first subproblem
-        solve_hanoi(num_disks - 1, first_peg, last_peg, middle_peg)
+        # moving a stack from first_peg to middle_peg
+        solve_hanoi(num_disks -1, first_peg, last_peg, middle_peg)
         
-        # Second subproblem: Move disk num_disks from first_peg to last_peg
+        # Move disk num_disks from first_peg to last_peg
         solve_hanoi(1, first_peg, middle_peg, last_peg)
         
-        # Instruction 2: Add code to solve the third subproblem
+        # moving a stack of from middle_peg to last_peg
         solve_hanoi(num_disks -1, middle_peg, first_peg, last_peg)
         
-        
-solve_hanoi(3, 'A', 'B', 'C')
+solve_hanoi(3, "A", "B", "C")
